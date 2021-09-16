@@ -1,0 +1,14 @@
+<%= form_with(model: project) do|form| %>
+<div>
+	<%= form.label :name %><br>
+	<%= form.text_field :name %>
+   <% project.errors.full_messages_for(:name).each do|message| %>
+       <p style="color:red"><%= message %></p>
+       <% end %>
+</div>
+ <div>
+ 	<%= form.submit %>
+ </div><br>
+   <% end %>
+
+<%= link_to 'Back', projects_path %>
