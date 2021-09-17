@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Developers</h1>
-
-<table>
+<div class="row">
+<div class="col-md-12 col-lg-12 mt-3 mb-3">
+  <h1 class="text text-dark"><strong>Developers:</strong></h1>
+  <%= link_to 'New Developer', new_developer_path, class:"btn btn-primary btn-lg mb-3" %><table class="table table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -11,21 +11,27 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
-  <tbody>
-    <% @developers.each do |developer| %>
-      <tr>
-        <td><%= developer.name %></td>
-        <td><%= developer.email %></td>
-        <td><%= developer.role %></td>
-        <td><%= link_to 'Show', developer %></td>
-        <td><%= link_to 'Edit', edit_developer_path(developer) %></td>
-        <td><%= link_to 'Destroy', developer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Developer', new_developer_path %>
+    <tbody>
+      <% @developers.each do |developer| %>
+        <tr>
+            <td><%= developer.name %></td>
+            <td><%= developer.email %></td>
+            <td><%= developer.role %></td>
+          <td>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Actions
+              </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><%= link_to 'Show', developer,class:"dropdown-item" %></li>
+              <li><%= link_to 'Edit', edit_developer_path(developer), class:"dropdown-item" %></li>
+              <li><%= link_to 'Destroy', developer, method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %></li>
+            </ul>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

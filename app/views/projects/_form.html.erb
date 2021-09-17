@@ -1,14 +1,16 @@
 <%= form_with(model: project) do|form| %>
-<div>
-	<%= form.label :name %><br>
-	<%= form.text_field :name %>
-   <% project.errors.full_messages_for(:name).each do|message| %>
-       <p style="color:red"><%= message %></p>
-       <% end %>
-</div>
- <div>
- 	<%= form.submit %>
- </div><br>
-   <% end %>
+  <div class="form-group">
+  	<%= form.label :name, class:'mb-2'%>
+  	<%= form.text_field :name, class: "form-control form-control-lg" %>
+    <% project.errors.full_messages_for(:name).each do|message| %>
+    <p style="color:red;"><%= message %></p>
+    <% end %>
+  </div>
 
-<%= link_to 'Back', projects_path %>
+  <div class="form-group, mt-3">
+   	<%= form.submit class:"btn btn-primary btn-lg" %>
+    <%= link_to 'Back', projects_path, class:'btn btn-outline-primary btn-lg' %>
+  </div>
+
+ <% end %>
+

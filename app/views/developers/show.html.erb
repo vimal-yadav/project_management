@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @developer.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @developer.email %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @developer.role %>
-</p>
-
-<%= link_to 'Edit', edit_developer_path(@developer) %> |
-<%= link_to 'Back', developers_path %>
+<div class="row">
+  <div class="col-md-12 col-lg-12">
+    <div class="card shadow">
+      <div class="card-body">
+        <h1>Developers Details</h1>
+        <p class="Lead">
+          <strong>Name:</strong>
+          <%= @developer.name %>
+        </p>
+        <p class="Lead">
+          <strong>Email:</strong>
+          <%= @developer.email %>
+        </p>
+        <p class="Lead">
+          <strong>Role:</strong>
+          <%= @developer.role %>
+        </p>
+          <%= link_to 'Back to list', developers_path, class: "btn btn-primary btn-lg" %>
+      </div>
+    </div>  
+  </div>
+</div>

@@ -1,6 +1,14 @@
-<h1>Project Details</h1>
+<div class="row">
+ <div class="col-md-12 col-lg-12">
+    <div class="card shadow mt-5 mb-5">
+	    <div class="card-body">
+        <h1>Project Details</h1>
+				<p class="Lead"><strong>Name:</strong><%= @project.name %></p>
+
+				<%= link_to 'Back to list', projects_path , class:"btn btn-primary btn-lg" %>
+	    </div>	
+    </div>
+  </div>
+</div>
 
 
-<p> <strong>Name:</strong><%= @project.name %></p>
-
-<%= link_to 'Back to list', projects_path %>
